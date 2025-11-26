@@ -21,6 +21,18 @@ services:
     volumes:
       - redis_data:/data
 
+  auth-service:
+    build:
+      context: ../auth-service
+      dockerfile: infra/Dockerfile
+    environment:
+      - DATABASE_URL=
+      - JWT_SECRET=changeme
+    depends_on:
+      - postgres
+    ports:
+      - "8081:8081"
+
 volumes:
   postgres_data:
   redis_data:
