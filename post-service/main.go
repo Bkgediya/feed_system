@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println("Post service is running on :8081")
-	http.ListenAndServe(":8081", nil)
+	fmt.Println("Post service is running on :8084")
+	http.ListenAndServe(":8084", nil)
 }
